@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz Time!</h1>
+    <form id="quiz-form">
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. What is the capital of France?</p>
+        <label>
+          <input type="radio" name="q1" value="Paris"> Paris
+        </label>
+        <label>
+          <input type="radio" name="q1" value="London"> London
+        </label>
+        <label>
+          <input type="radio" name="q1" value="Berlin"> Berlin
+        </label>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. Which planet is known as the Red Planet?</p>
+        <label>
+          <input type="radio" name="q2" value="Mars"> Mars
+        </label>
+        <label>
+          <input type="radio" name="q2" value="Jupiter"> Jupiter
+        </label>
+        <label>
+          <input type="radio" name="q2" value="Saturn"> Saturn
+        </label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit Quiz</button>
+    </form>
+
+    <!-- Result Display -->
+    <div id="result" class="hidden">
+      <h2>Your Score: <span id="score"></span></h2>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
