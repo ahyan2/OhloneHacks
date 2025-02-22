@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    border: 5px solid black;
+    border-radius: 30px;    /* Curves border edge */
+    padding: 10px;
+    background-color: rgb(2, 195, 154);
+}
+
+.page-background{
+    background-color: rgb(240, 243, 189);
+}
+
+header{
+    background-color: rgb(2, 195, 154);        /* Background color of container */
+    text-align: center;     /* Horizontally centers text in regards to border container */
+    margin: auto;       /* Horizontally centers border in regards to screen*/
+    border: 3px solid black;     /* Border thickness, line description, color */
+    border-radius: 30px;        /* Curve of border edge */
+    padding: 0px;       /* Vertical distance from text to border edge */
+    width: 1000px;      /* Width of container */
+}
