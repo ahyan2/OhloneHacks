@@ -283,9 +283,9 @@
 }
 .link {
   width: 131.11px;
-  height: 44px;
+  height: 60px;
   position: absolute;
-  left: 369.69px;
+  right: 100px;
   top: 50%;
   translate: 0 -50%;
 }
