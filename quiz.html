@@ -1,72 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Page</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(174, 219, 238);
+            /* R: 174, G: 219, B: 238 */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            /* Center align all text by default */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FAF9F6;
+            /* Amber-like background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            /* Darker text color */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            color: #555;
+            /* Slightly darker paragraph text */
+            margin-bottom: 15px;
+        }
+
+        .slider-container {
+            margin-bottom: 20px;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            color: #777;
+            /* Grey label text */
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        .slider-labels span {
+            cursor: pointer;
+            display: inline-block;
+            width: calc(20% - 5px);
+            /* adjust size as needed */
+            text-align: center;
+        }
+
+        .slider-labels span.active {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 20px auto;
+            /* Center the button */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #section2,
+        #section3,
+        #section4 {
+            display: none;
+        }
+
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <!-- Section 2 -->
-    <div id="section2">
-      <h1>Quiz Time! Section 2: Relationships</h1>
-      <form id="quiz-form">
+    <div class="container">
         <div class="question">
-          <p>1. How satisfied are you with your current relationships?</p>
-          <label><input type="radio" name="q1" value="1"> Dissatisfied (1)</label>
-          <label><input type="radio" name="q1" value="2"> Neutral (2)</label>
-          <label><input type="radio" name="q1" value="3"> Somewhat Satisfied (3)</label>
-          <label><input type="radio" name="q1" value="4"> Very Satisfied (4)</label>
+            <form id="quiz-form">
+                <div id="section1">
+                    <h1>Section 1: Emotional Well-Being</h1>
+                    <!-- Question 1 -->
+                    <p>How often do you feel overwhelmed by your emotions?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q1"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Often</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Rarely</span>
+                            <span data-value="5">Never</span>
+                        </div>
+                    </div>
+                    <!-- Question 2 -->
+                    <p>Do you find it difficult to manage stress?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q2"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Often</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Rarely</span>
+                            <span data-value="5">Never</span>
+                        </div>
+                    </div>
+                    <!-- Question 3 -->
+                    <p>How often do you feel sad or hopeless?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q3"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Often</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Rarely</span>
+                            <span data-value="5">Never</span>
+                        </div>
+                    </div>
+                    <!-- Next section -->
+                    <button type="button" onclick="showSection2()">Next Section</button>
+                </div>
+                <!-- Section 2 (Initially Hidden) -->
+                <div id="section2" style="display: none;">
+                    <h1>Section 2: Relationships</h1>
+                    <!-- Question 4 -->
+                    <p>How satisfied are you with your current relationships?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q4"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Dissatisfied</span>
+                            <span data-value="2">Neutral</span>
+                            <span data-value="3">Somewhat satisfied</span>
+                            <span data-value="4">Very Satisfied</span>
+                        </div>
+                    </div>
+                    <!-- Question 5 -->
+                    <p>Do you struggle with setting boundaries in relationships?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q5"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Frequently</span>
+                            <span data-value="3">Occasionally</span>
+                            <span data-value="4">Not at all</span>
+                        </div>
+                    </div>
+                    <!-- Next Section -->
+                    <button type="button" onclick="showSection3()">Next Section</button>
+                </div>
+                <!-- Section 3 (Initially Hidden) -->
+                <div id="section3" style="display: none;">
+                    <h1>Section 3: Self-Esteem and Confidence</h1>
+                    <!-- Question 6 -->
+                    <p>How would you rate your self-confidence?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q6"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Low</span>
+                            <span data-value="2">Neutral</span>
+                            <span data-value="3">Somewhat High</span>
+                            <span data-value="4">High</span>
+                        </div>
+                    </div>
+                    <!-- Question 7 -->
+                    <p>Do you often compare yourself to others?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q7"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Often</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Rarely</span>
+                        </div>
+                    </div>
+                    <!-- Next Section -->
+                    <button type="button" onclick="showSection4()">Next Section</button>
+                </div>
+                <!-- Section 4 (Initially Hidden) -->
+                <div id="section4" style="display: none;">
+                    <h1>Section 4: Coping Mechanisms</h1>
+                    <!-- Question 8 -->
+                    <p>How do you usually cope with stress?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q8"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Unhealthy habits (overeating, substance use)</span>
+                            <span data-value="2">Avoiding the problem</span>
+                            <span data-value="3">Talking to friends/family</span>
+                            <span data-value="4">Healthy habits (exercise, meditation)</span>
+                        </div>
+                    </div>
+                    <!-- Question 9 -->
+                    <p>Do you feel like you have effective coping strategies?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q9"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">No, never</span>
+                            <span data-value="2">Rarely</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Yes, always</span>
+                        </div>
+                    </div>
+                    <!-- Next Section -->
+                    <button type="button" onclick="submitQuiz()">Submit</button>
+                </div>
+            </form>
         </div>
-
-        <div class="question">
-          <p>2. Do you struggle with setting boundaries in relationships?</p>
-          <label><input type="radio" name="q2" value="1"> Not at all (1)</label>
-          <label><input type="radio" name="q2" value="2"> Occasionally (2)</label>
-          <label><input type="radio" name="q2" value="3"> Frequently (3)</label>
-          <label><input type="radio" name="q2" value="4"> Always (4)</label>
-        </div>
-
-        <!-- Next Section Button -->
-        <button type="button" onclick="showSection3()">Next Section</button>
-      </form>
     </div>
 
-    <!-- Section 3 (Initially Hidden) -->
-    <div id="section3" style="display: none;">
-      <h1>Quiz Time! Section 3: Personal Growth</h1>
-      <form id="quiz-form-2">
-        <div class="question">
-          <p>1. How often do you engage in self-reflection?</p>
-          <label><input type="radio" name="q3" value="1"> Rarely (1)</label>
-          <label><input type="radio" name="q3" value="2"> Sometimes (2)</label>
-          <label><input type="radio" name="q3" value="3"> Often (3)</label>
-          <label><input type="radio" name="q3" value="4"> Always (4)</label>
-        </div>
+    <script>
 
-        <div class="question">
-          <p>2. Do you set clear goals for yourself?</p>
-          <label><input type="radio" name="q4" value="1"> Never (1)</label>
-          <label><input type="radio" name="q4" value="2"> Occasionally (2)</label>
-          <label><input type="radio" name="q4" value="3"> Frequently (3)</label>
-          <label><input type="radio" name="q4" value="4"> Always (4)</label>
-        </div>
+        function showSection2() {
+            document.getElementById("section1").style.display = "none";
+            document.getElementById("section2").style.display = "block";
+        }
 
-        <!-- Finish Quiz Button -->
-        <button type="submit">Finish Quiz</button>
-      </form>
-    </div>
-  </div>
+        function showSection3() {
+            document.getElementById("section2").style.display = "none";
+            document.getElementById("section3").style.display = "block";
+        }
 
-  <script>
-    function showSection3() {
-      // Hide Section 2 (Including the Header and Questions)
-      document.getElementById("section2").style.display = "none";
-      
-      // Show Section 3
-      document.getElementById("section3").style.display = "block";
-    }
-  </script>
+        function showSection4() {
+            document.getElementById("section3").style.display = "none";
+            document.getElementById("section4").style.display = "block";
+        }
+
+        function submitQuiz() {
+            const answers = [];
+            for (let i = 1; i <= 9; i++) {
+                const sliderValue = document.getElementById(`q${i}`).value;
+                answers.push(parseInt(sliderValue)); // Convert to integer and add to the array
+            }
+            localStorage.setItem("quizAnswers", JSON.stringify(answers));
+            window.location.href = "results.html";
+        }
+        function updateActiveLabel(input) {
+            const sliderId = input.id;
+            const sliderValue = input.value;
+            const sliderLabels = input.parentElement.querySelector('.slider-labels');
+
+            if (sliderLabels) {
+                // Remove the 'active' class from all labels
+                sliderLabels.querySelectorAll('span').forEach(span => {
+                    span.classList.remove('active');
+                });
+
+                // Find the label that matches the slider's value and add the 'active' class
+                const activeLabel = sliderLabels.querySelector(`[data-value="${sliderValue}"]`);
+                if (activeLabel) {
+                    activeLabel.classList.add('active');
+                }
+            }
+        }
+
+        // Attach event listeners to each slider to call the updateActiveLabel function
+        document.querySelectorAll('.slider').forEach(input => {
+            updateActiveLabel(input); // Call the function once to initialize the labels on page load
+            input.addEventListener('input', () => updateActiveLabel(input)); // Call the function every time the input changes
+        });
+
+    </script>
 </body>
+
 </html>
