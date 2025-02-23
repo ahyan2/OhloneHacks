@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results and Personalized Recommendations</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .course-recommendation {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-score {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Quiz Results</h1>
+        <a href="https://mindfulevolutionstherapy.com/therapists/" class="recommendation-button" target="_blank">
+            Click Here to See All the Amazing Therapists of Mindful Evolutions Therapy! 
+        </a>
+        <div id="results-container">
+            <!-- Results will be populated here -->
+        </div>
+    </div>
+
+    <script>
+        // Course recommendations database
+        const courseRecommendations = {
+            emotionalWellbeing: [
+                {
+                    title: "Understanding and Managing Emotions",
+                    description: "Learn techniques for emotional regulation and mindfulness",
+                    url: "https://www.coursera.org/learn/managing-emotions-uncertainty-stress",
+                    forScores: [1, 2, 3] // Scores 1-3
+                },
+                {
+                    title: "Advanced Emotional Intelligence",
+                    description: "Develop deeper emotional awareness and control",
+                    url: "https://frontlineon.com/trainings/professional-development/advanced-emotional-intelligence/",
+                    forScores: [4, 5] // Scores 4-5
+                }
+            ],
+            relationships: [
+                {
+                    title: "Building Healthy Relationships",
+                    description: "Learn fundamental skills for creating and maintaining healthy relationships.",
+                    url: "https://www.udemy.com/course/the-path-to-healthy-relationships/",
+                    forScores: [1, 2]
+                },
+                {
+                    title: "Relationship Enhancement",
+                    description: "Take your relationships to the next level with advanced communication skills. Professionally and Personally",
+                    url: "https://www.dhs.gov/employee-resources/building-strong-bonds",
+                    forScores: [3, 4]
+                }
+            ],
+            selfEsteem: [
+                {
+                    title: "Building Self-Confidence",
+                    description: "Develop core self-esteem and confidence through proven techniques.",
+                    url: "https://professionaldevelopmenttraining.com/courses/assertiveness-and-self-confidence-training-in-atlanta-baltimore-boston-charlotte-chicago-los-angeles-new-york-miami-orlando-philadelphia-seattle-and-us-wide",
+                    forScores: [1, 2]
+                },
+                {
+                    title: "Advanced Personal Growth",
+                    description: "Further develop your self-esteem and personal growth journey.",
+                    url: "https://continuingstudies.stanford.edu/courses/professional-personal-development",
+                    forScores: [3, 4]
+                }
+            ],
+            copingMechanisms: [
+                {
+                    title: "Healthy Coping Strategies",
+                    description: "Learn effective ways to handle stress and life challenges.",
+                    url: "https://courses.therapyinanutshell.com/coping-skills-and-self-care-for-mental-health",
+                    forScores: [1, 2]
+                },
+                {
+                    title: "Advanced Stress Management",
+                    description: "Master advanced techniques for managing stress and building resilience.",
+                    url: "https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/the-4-as-of-stress-relief",
+                    forScores: [3, 4]
+                }
+            ]
+        };
+
+        function displayResults(answers) {
+            const container = document.getElementById('results-container');
+            container.innerHTML = ''; // Clear existing content
+
+            const sections = [
+        { key: 'emotionalWellbeing', name: 'Emotional Well-Being', questions: [0, 1, 2], therapist: 'Suzanna Earle' },
+        { key: 'relationships', name: 'Relationships', questions: [3, 4], therapist: 'Mae Verano and Shimrit Zelig' },
+        { key: 'selfEsteem', name: 'Self-Esteem and Confidence', questions: [5, 6], therapist: 'Kelly Kapis and Claudia Guzanam' },
+        { key: 'copingMechanisms', name: 'Coping Mechanisms', questions: [7, 8], therapist: 'Samantha Embrick' },
+    ];
+
+    sections.forEach(section => {
+        const sectionScores = section.questions.map(index => answers[index]);
+        const averageScore = Math.round(sectionScores.reduce((a, b) => a + b, 0) / sectionScores.length);
+
+        container.innerHTML += `
+            <div class="section-score">
+                <h2>${section.name} Score: ${averageScore}</h2>
+            </div>
+        `;
+
+        const recommendation = courseRecommendations[section.key]?.find(course =>
+            course.forScores.includes(averageScore)
+        );
+
+        if (recommendation) {
+            let therapistButton = '';
+            if (averageScore <= 2) {
+                therapistButton = `
+                     <div class="button-container">
+                        <button onclick="window.open('https://mindfulevolutionstherapy.com/therapists/', '_blank')" class="therapist-button">
+                            Specific Recommended Therapists: see ${section.therapist}'s biography and contact
+                        </button>
+                    </div>
+                `;
+            } else { 
+                therapistButton = `
+                     <div class="button-container">
+                        <a> No Therapist Needed
+                        </a>
+                    </div>
+                `;
+            }
+
+            container.innerHTML += `
+                <div class="course-recommendation">
+                    <h3>${recommendation.title}</h3>
+                    <p>${recommendation.description}</p>
+                    <p>Based on your ${section.name} score: ${averageScore}</p>
+                    <a href="${recommendation.url}" target="_blank">Learn More</a>
+                    <span> ${therapistButton} </span> 
+                </div>
+            `;
+        }
+    });
+}
+        window.addEventListener('load', () => {
+            const answers = JSON.parse(localStorage.getItem('quizAnswers'));
+            if (answers && Array.isArray(answers) && answers.length === 9) {
+                displayResults(answers);
+            } else {
+                document.getElementById('results-container').innerHTML = `
+                    <div class="course-recommendation">
+                        <h3>No Quiz Data Found</h3>
+                        <p>Please complete the quiz first.</p>
+                        <a href="index.html">Start Quiz</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!--  results.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .course-recommendation {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-score {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Quiz Results</h1>
+        <div id="results-container">
+             Results will be populated here
+        </div>
+    </div>
+
+    <script>
+        // Course recommendations database (simplified for this example)
+        const courseRecommendations = {
+            emotionalWellbeing: [
+                {
+                    title: "Understanding and Managing Emotions",
+                    description: "Learn techniques for emotional regulation and mindfulness",
+                    url: "/courses/emotional-management",
+                    forScores: [1, 2] // Scores 1-2
+                },
+                {
+                    title: "Advanced Emotional Intelligence",
+                    description: "Develop deeper emotional awareness and control",
+                    url: "/courses/emotional-intelligence",
+                    forScores: [3, 4] // Scores 3-4
+                }
+            ],
+            relationships: [
+                {
+                    title: "Building Healthy Relationships",
+                    description: "Learn fundamental skills for creating and maintaining healthy relationships.",
+                    url: "/courses/relationship-basics",
+                    forScores: [1, 2]
+                },
+                {
+                    title: "Relationship Enhancement",
+                    description: "Take your relationships to the next level with advanced communication skills.",
+                    url: "/courses/relationships-advanced",
+                    forScores: [3, 4]
+                }
+            ],
+            selfEsteem: [
+                {
+                    title: "Building Self-Confidence",
+                    description: "Develop core self-esteem and confidence through proven techniques.",
+                    url: "/courses/self-confidence",
+                    forScores: [1, 2]
+                },
+                {
+                    title: "Advanced Personal Growth",
+                    description: "Further develop your self-esteem and personal growth journey.",
+                    url: "/courses/personal-growth",
+                    forScores: [3, 4]
+                }
+            ],
+            copingMechanisms: [
+                {
+                    title: "Healthy Coping Strategies",
+                    description: "Learn effective ways to handle stress and life challenges.",
+                    url: "/courses/coping-basics",
+                    forScores: [1, 2]
+                },
+                {
+                    title: "Advanced Stress Management",
+                    description: "Master advanced techniques for managing stress and building resilience.",
+                    url: "/courses/stress-advanced",
+                    forScores: [3, 4]
+                }
+            ]
+        };
+
+        function displayResults(quizData) {
+            const container = document.getElementById('results-container');
+            container.innerHTML = ''; // Clear existing content
+
+            // Define all sections
+            const sections = [
+                { key: 'emotionalWellbeing', name: 'Emotional Well-Being' },
+                { key: 'relationships', name: 'Relationships' },
+                { key: 'selfEsteem', name: 'Self-Esteem and Confidence' },
+                { key: 'copingMechanisms', name: 'Coping Mechanisms' },
+            ];
+
+
+            sections.forEach(section => {
+                if (quizData[section.key]) {
+                    // Calculate the average score for the section
+                    const scores = quizData[section.key];
+                    const averageScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+
+                    // Display the section score
+                    container.innerHTML += `
+                        <div class="section-score">
+                            <h2>${section.name} Score: ${averageScore}</h2>
+                        </div>
+                    `;
+
+                    // Find appropriate recommendation
+                    const recommendation = courseRecommendations[section.key]?.find(course =>
+                        course.forScores.includes(Math.floor(averageScore))
+                    );
+
+                    // Display recommendation
+                    if (recommendation) {
+                        container.innerHTML += `
+                            <div class="course-recommendation">
+                                <h3>${recommendation.title}</h3>
+                                <p>${recommendation.description}</p>
+                                <p>Based on your ${section.name} score: ${averageScore}</p>
+                            </div>
+                        `;
+                    }
+                }
+            });
+        }
+
+
+            window.addEventListener('load', () => {
+            const quizData = JSON.parse(localStorage.getItem('quizAnswers'));
+            console.log(quizData); // Debugging: Check the structure of quizData
+            if (quizData) {
+                displayResults(quizData);
+            } else {
+                document.getElementById('results-container').innerHTML = `
+                    <div class="course-recommendation">
+                        <h3>No Quiz Data Found</h3>
+                        <p>Please complete the quiz first.</p>
+                        <a href="index.html">Start Quiz</a>
+                    </div>
+                `;
+            }
+        });
+
+
+      
+    </script>
+</body>
+</html>
+
+
+ -->

@@ -1,0 +1,520 @@
+.group-3,
+.group-3 * {
+  box-sizing: border-box;
+}
+.group-3 {
+  height: 1900px;
+  position: relative;
+}
+.background {
+  background: #a2ddf0;
+  height: 900px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+}
+.container {
+  width: 608px;
+  height: 618.41px;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+}
+.heading-1 {
+  width: 473.52px;
+  height: 172.78px;
+  position: absolute;
+  left: 0px;
+  top: calc(50% - 193.06px);
+}
+.drop-in-chill-out {
+  color: #1f1f2b;
+  text-align: center;
+  font-family: "Manrope-Regular", sans-serif;
+  font-size: 26.700000762939453px;
+  line-height: 40.08px;
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: calc(50% - 106.2px);
+  width: 515.28px;
+  height: 76.08px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group-1 {
+  position: absolute;
+  inset: 0;
+}
+.logo-1 {
+  width: 815px;
+  height: 815px;
+  position: absolute;
+  left: -72px;
+  top: -29px;
+  overflow: hidden;
+}
+.vector {
+  width: 16.44%;
+  height: 6.5%;
+  position: absolute;
+  right: 45.15%;
+  left: 38.4%;
+  bottom: 51.41%;
+  top: 42.09%;
+  overflow: visible;
+}
+.vector2 {
+  width: 6.38%;
+  height: 6.5%;
+  position: absolute;
+  right: 44.79%;
+  left: 48.83%;
+  bottom: 51.41%;
+  top: 42.09%;
+  overflow: visible;
+}
+.vector3 {
+  width: 5.4%;
+  height: 6.5%;
+  position: absolute;
+  right: 47.73%;
+  left: 46.87%;
+  bottom: 51.41%;
+  top: 42.09%;
+  overflow: visible;
+}
+.start-for-free {
+  color: #337896;
+  text-align: center;
+  font-family: "Helvetica-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  left: calc(50% - 75.5px);
+  bottom: 54.23%;
+  top: 44.29%;
+  height: 1.47%;
+  width: 100px;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.welcome-to-chill-pill {
+  text-align: center;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-size: 48px;
+  line-height: 86px;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: calc(50% - 206px);
+  width: 924px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.welcome-to-chill-pill-span {
+  color: #1f1f2b;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-size: 48px;
+  line-height: 86px;
+  font-weight: 500;
+}
+.welcome-to-chill-pill-span2 {
+  color: #307896;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-size: 48px;
+  line-height: 86px;
+  font-weight: 500;
+}
+.background2 {
+  background: linear-gradient(
+    101.91deg,
+    rgba(228, 242, 253, 1) 0%,
+    rgba(162, 221, 240, 0) 58.99999737739563%
+  );
+  width: 100%;
+  height: 100.94px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.group-2 {
+  position: absolute;
+  inset: 0;
+}
+.logo-12 {
+  width: 815px;
+  height: 815px;
+  position: absolute;
+  left: -282px;
+  top: -320px;
+  overflow: hidden;
+}
+.vector4 {
+  width: 16.44%;
+  height: 6.5%;
+  position: absolute;
+  right: 45.15%;
+  left: 38.4%;
+  bottom: 51.41%;
+  top: 42.09%;
+  overflow: visible;
+}
+.vector5 {
+  width: 6.38%;
+  height: 6.5%;
+  position: absolute;
+  right: 44.79%;
+  left: 48.83%;
+  bottom: 51.41%;
+  top: 42.09%;
+  overflow: visible;
+}
+.vector6 {
+  width: 5.4%;
+  height: 6.5%;
+  position: absolute;
+  right: 47.73%;
+  left: 46.87%;
+  bottom: 51.41%;
+  top: 42.09%;
+  overflow: visible;
+}
+.logo-2 {
+  width: 70.67%;
+  height: 70.67%;
+  position: absolute;
+  right: 22.33%;
+  left: 6.99%;
+  bottom: 10.8%;
+  top: 18.53%;
+  overflow: hidden;
+}
+.chill {
+  color: #f5f5f5;
+  text-align: left;
+  font-family: "Helvetica-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 45.66%;
+  left: 47.05%;
+  width: 7.29%;
+  bottom: 60.59%;
+  top: 36.63%;
+  height: 2.78%;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.pill {
+  color: #153941;
+  text-align: left;
+  font-family: "Helvetica-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 34.72%;
+  left: 59.9%;
+  width: 5.38%;
+  bottom: 60.59%;
+  top: 36.63%;
+  height: 2.78%;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.solutions {
+  color: #1f1f2b;
+  text-align: left;
+  font-family: "Manrope-Medium", sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 500;
+  position: absolute;
+  left: 240.34px;
+  top: 36.47px;
+  width: 67.72px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+._666-a-0-c-9-a-146-befc-2-d-12-fa-8-fa-icon-3-ddown-20-arrow-svg {
+  width: 14px;
+  height: 8px;
+  position: absolute;
+  left: 315.69px;
+  top: 50%;
+  translate: 0 -50%;
+  overflow: hidden;
+}
+._666-a-0-c-9-a-146-befc-2-d-12-fa-8-fa-icon-3-ddown-20-arrow-svg-fill {
+  width: 14px;
+  height: 8px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+._666-a-0-c-9-a-146-befc-2-d-12-fa-8-fa-icon-3-ddown-20-arrow-svg2 {
+  width: 14px;
+  height: 8px;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+  overflow: visible;
+}
+.rectangle {
+  width: 5.49%;
+  height: 65.39%;
+  position: absolute;
+  right: 82.41%;
+  left: 12.1%;
+  bottom: 6.41%;
+  top: 28.2%;
+}
+.link {
+  width: 131.11px;
+  height: 44px;
+  position: absolute;
+  left: 369.69px;
+  top: 50%;
+  translate: 0 -50%;
+}
+.our-integrations {
+  color: #1f1f2b;
+  text-align: left;
+  font-family: "Manrope-Medium", sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 500;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 115.53px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link2 {
+  width: 64.67px;
+  height: 44px;
+  position: absolute;
+  left: 532.8px;
+  top: 50%;
+  translate: 0 -50%;
+}
+.pricing {
+  color: #1f1f2b;
+  text-align: left;
+  font-family: "Manrope-Medium", sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 500;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 49.11px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link3 {
+  width: 90.66px;
+  height: 44px;
+  position: absolute;
+  left: 629.47px;
+  top: 50%;
+  translate: 0 -50%;
+}
+.use-cases {
+  color: #1f1f2b;
+  text-align: left;
+  font-family: "Manrope-Medium", sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 500;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 75.04px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.list-listitem-link {
+  opacity: 0.8;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 1415.27px;
+  top: 38.47px;
+}
+._672-b-9690429-e-47-b-1-c-5-b-60-f-2-d-flag-fr-svg-fill {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+._672-b-9690429-e-47-b-1-c-5-b-60-f-2-d-flag-fr-svg {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.mask-group {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.fr {
+  text-align: left;
+  font-family: "Manrope-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  text-decoration: underline;
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  width: 11.65px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.vertical-divider {
+  background: rgba(0, 0, 0, 0.21);
+  width: 1px;
+  position: absolute;
+  left: 1477.66px;
+  bottom: 32.47px;
+  top: 32.470001220703125px;
+}
+.link4 {
+  width: 99.34px;
+  height: 44px;
+  position: absolute;
+  right: 303.61px;
+  top: 50%;
+  translate: 0 -50%;
+}
+.connection {
+  color: #1f1f2b;
+  text-align: left;
+  font-family: "Manrope-Medium", sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 500;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 83.72px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link5 {
+  background: #153941;
+  border-radius: 10.56px;
+  width: 176.27px;
+  height: 53.91px;
+  position: absolute;
+  right: 88.95px;
+  top: 50%;
+  translate: 0 -50%;
+  box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 1),
+    0px 20px 28px 0px rgba(86, 75, 224, 0.15);
+  overflow: hidden;
+}
+.start-for-free2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Manrope-SemiBold", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 600;
+  position: absolute;
+  left: 22.7px;
+  top: 12.95px;
+  width: 98.51px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+._6669-cd-17-bb-3067187529-a-61-b-arrow-right-svg-svg {
+  width: 8.72px;
+  height: 14.95px;
+  position: absolute;
+  left: 147.14px;
+  top: 50%;
+  translate: 0 -50%;
+  overflow: hidden;
+}
+._6669-cd-17-bb-3067187529-a-61-b-arrow-right-svg-svg-fill {
+  width: 8.72px;
+  height: 14.95px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+._6669-cd-17-bb-3067187529-a-61-b-arrow-right-svg-svg2 {
+  width: 8.72px;
+  height: 14.95px;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+  overflow: visible;
+}
+
+
+
+
+
+
+/* @keyframes wobble {
+  0% { transform: translateY(-5px) rotate(-2deg); }
+  50% { transform: translateY(5px) rotate(2deg); }
+  100% { transform: translateY(-5px) rotate(-2deg); }
+} */
+
+@keyframes wobble {
+  0% { transform: translateX(-4px) rotate(-2deg); }
+  25% { transform: translateX(4px) rotate(2deg); }
+  50% { transform: translateX(-4px) rotate(-2deg); }
+  75% { transform: translateX(4px) rotate(2deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes fall-rotate {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.logo-1.wobble {
+  animation: wobble 1.5s ease-in-out infinite alternate;
+}
+
+.logo-1.falling {
+  animation: fall-rotate 1.5s linear forwards;
+}
