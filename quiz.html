@@ -1,187 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Page</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(174, 219, 238);
+            /* R: 174, G: 219, B: 238 */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            /* Center align all text by default */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FAF9F6;
+            /* Amber-like background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            /* Darker text color */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            color: #555;
+            /* Slightly darker paragraph text */
+            margin-bottom: 15px;
+        }
+
+        .slider-container {
+            margin-bottom: 20px;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            color: #777;
+            /* Grey label text */
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        .slider-labels span {
+            cursor: pointer;
+            display: inline-block;
+            width: calc(20% - 5px);
+            /* adjust size as needed */
+            text-align: center;
+        }
+
+        .slider-labels span.active {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 20px auto;
+            /* Center the button */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #section2,
+        #section3,
+        #section4 {
+            display: none;
+        }
+
+        .logo-12 {
+            position: absolute;
+            top: -320px;
+            left: -282px;
+            width: 815px;
+            height: 815px;
+            overflow: hidden;
+        }
+
+        .logo-2 {
+            position: absolute;
+            right: 22.33%;
+            left: 6.99%;
+            bottom: 10.8%;
+            top: 18.53%;
+            width: 70.67%;
+            height: 70.67%;
+            overflow: hidden;
+        }
+
+        .chill, .pill {
+            position: absolute;
+            font-family: "Helvetica-Bold", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .chill {
+            color: #f5f5f5;
+            top: 36.63%;
+            left: 47.05%;
+        }
+
+        .pill {
+            color: #153941;
+            top: 36.63%;
+            left: 59.9%;
+        }
+
+        .vector4, .vector5, .vector6 {
+            position: absolute;
+            overflow: visible;
+        }
+
+        .vector4 {
+            width: 16.44%;
+            height: 6.5%;
+            right: 45.15%;
+            left: 38.4%;
+            bottom: 51.41%;
+            top: 42.09%;
+        }
+
+        .vector5 {
+            width: 6.38%;
+            height: 6.5%;
+            right: 44.79%;
+            left: 48.83%;
+            bottom: 51.41%;
+            top: 42.09%;
+        }
+
+        .vector6 {
+            width: 5.4%;
+            height: 6.5%;
+            right: 47.73%;
+            left: 46.87%;
+            bottom: 51.41%;
+            top: 42.09%;
+        }
+
+    </style>
 </head>
+
 <body>
+    <div class="container">
 
-  <div class="container">
-    <div class="question">
-      <form id="quiz-form">
-        <div id="section1">
-          <h1>Section 1: Emotional Well-Being</h1>
-          <!-- Question 1 -->
-          <p>How often do you feel overwhelmed by your emotions?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q1">
-            <div class="slider-labels">
-              <span>Always</span>
-              <span>Often</span>
-              <span>Sometimes</span>
-              <span>Rarely</span>
-              <span>Never</span>
-            </div>
-          </div>
 
-          <!-- Question 2 -->
-          <p>Do you find it difficult to manage stress?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q2">
-            <div class="slider-labels">
-              <span>Always</span>
-              <span>Often</span>
-              <span>Sometimes</span>
-              <span>Rarely</span>
-              <span>Never</span>
-            </div>
-          </div>
-
-          <!-- Question 3 -->
-          <p>How often do you feel sad or hopeless?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q3">
-            <div class="slider-labels">
-              <span>Always</span>
-              <span>Often</span>
-              <span>Sometimes</span>
-              <span>Rarely</span>
-              <span>Never</span>
-            </div>
-          </div>
-          <!-- Next section -->
-          <button type="button" onclick="showSection2()">Next Section</button>
+      <div class="background2">
+        <div class="logo-12">
+            <img class="vector4" src="./autohtml-project(1)/vector3.svg" alt="vector4">
+            <img class="vector5" src="./autohtml-project(1)/vector4.svg" alt="vector5">
+            <img class="vector6" src="./autohtml-project(1)/vector5.svg" alt="vector6">
+            
+            <a href="./autohtml-project(1)/index.html" class="logo-2">
+                <div class="chill">CHILL</div>
+                <div class="pill">PILL</div>
+            </a>
         </div>
-
-        <!-- Section 2 (Initially Hidden) -->
-        <div id="section2" style="display: none;">
-          <h1>Section 2: Relationships</h1>
-          <!-- Question 4 -->
-          <p>How satisfied are you with your current relationships?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q4">
-            <div class="slider-labels">
-              <span>Dissatisfied</span>
-              <span>Neutral</span>
-              <span>Somewhat satisfied</span>
-              <span>Very Satisfied</span>
-            </div>
-          </div>
-
-          <!-- Question 5 -->
-          <p>Do you struggle with setting boundaries in relationships?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q5">
-            <div class="slider-labels">
-              <span>Always</span>
-              <span>Frequently</span>
-              <span>Occasionally</span>
-              <span>Not at all</span>
-            </div>
-          </div>
-          <!-- Next Section -->
-          <button type="button" onclick="showSection3()">Next Section</button>
-        </div>
-
-        <!-- Section 3 (Initially Hidden) -->
-        <div id="section3" style="display: none;">
-          <h1>Section 3: Self-Esteem and Confidence</h1>
-          <!-- Question 6 -->
-          <p>How would you rate your self-confidence?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q6">
-            <div class="slider-labels">
-              <span>Low</span>
-              <span>Neutral</span>
-              <span>Somewhat High</span>
-              <span>High</span>
-            </div>
-          </div>
-
-          <!-- Question 7 -->
-          <p>Do you often compare yourself to others?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q7">
-            <div class="slider-labels">
-              <span>Rarely</span>
-              <span>Sometimes</span>
-              <span>Often</span>
-              <span>Always</span>
-            </div>
-          </div>
-          <!-- Next Section -->
-          <button type="button" onclick="showSection4()">Next Section</button>
-        </div>
-
-        <!-- Section 4 (Initially Hidden) -->
-        <div id="section4" style="display: none;">
-          <h1>Section 4: Coping Mechanisms</h1>
-          <!-- Question 8 -->
-          <p>How do you usually cope with stress?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q8">
-            <div class="slider-labels">
-              <span>Unhealthy habits (overeating, substance use)</span>
-              <span>Avoiding the problem</span>
-              <span>Talking to friends/family</span>
-              <span>Healthy habits (exercise, meditation)</span>
-            </div>
-          </div>
-
-          <!-- Question 9 -->
-          <p>Do you feel like you have effective coping strategies?</p>
-          <div class="slider-container">
-            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q9">
-            <div class="slider-labels">
-              <span>No, never</span>
-              <span>Rarely</span>
-              <span>Sometimes</span>
-              <span>Yes, always</span>
-            </div>
-          </div>
-          <!-- Next Section -->
-          <button type="button" onclick="submitQuiz()">Submit</button>
-        </div>
-      </form>
     </div>
-  </div>
 
-  <script>
-    // Function to show/hide sections
-    function showSection2() {
-      document.getElementById("section1").style.display = "none";
-      document.getElementById("section2").style.display = "block";
-    }
 
-    function showSection3() {
-      document.getElementById("section2").style.display = "none";
-      document.getElementById("section3").style.display = "block";
-    }
 
-    function showSection4() {
-      document.getElementById("section3").style.display = "none";
-      document.getElementById("section4").style.display = "block";
-    }
+        <div class="question">
+            <form id="quiz-form">
+                <div id="section1">
+                    <h1>Section 1: Emotional Well-Being</h1>
+                    <!-- Question 1 -->
+                    <p>How often do you feel overwhelmed by your emotions?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q1"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Often</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Rarely</span>
+                            <span data-value="5">Never</span>
+                        </div>
+                    </div>
+                    <!-- Question 2 -->
+                    <p>Do you find it difficult to manage stress?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q2"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Often</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Rarely</span>
+                            <span data-value="5">Never</span>
+                        </div>
+                    </div>
+                    <!-- Question 3 -->
+                    <p>How often do you feel sad or hopeless?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="2" step="1" class="slider" id="q3"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Often</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Rarely</span>
+                            <span data-value="5">Never</span>
+                        </div>
+                    </div>
+                    <!-- Next section -->
+                    <button type="button" onclick="showSection2()">Next Section</button>
+                </div>
+                <!-- Section 2 (Initially Hidden) -->
+                <div id="section2" style="display: none;">
+                    <h1>Section 2: Relationships</h1>
+                    <!-- Question 4 -->
+                    <p>How satisfied are you with your current relationships?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q4"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Dissatisfied</span>
+                            <span data-value="2">Neutral</span>
+                            <span data-value="3">Somewhat satisfied</span>
+                            <span data-value="4">Very Satisfied</span>
+                        </div>
+                    </div>
+                    <!-- Question 5 -->
+                    <p>Do you struggle with setting boundaries in relationships?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q5"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Frequently</span>
+                            <span data-value="3">Occasionally</span>
+                            <span data-value="4">Not at all</span>
+                        </div>
+                    </div>
+                    <!-- Next Section -->
+                    <button type="button" onclick="showSection3()">Next Section</button>
+                </div>
+                <!-- Section 3 (Initially Hidden) -->
+                <div id="section3" style="display: none;">
+                    <h1>Section 3: Self-Esteem and Confidence</h1>
+                    <!-- Question 6 -->
+                    <p>How would you rate your self-confidence?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q6"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Low</span>
+                            <span data-value="2">Neutral</span>
+                            <span data-value="3">Somewhat High</span>
+                            <span data-value="4">High</span>
+                        </div>
+                    </div>
+                    <!-- Question 7 -->
+                    <p>Do you often compare yourself to others?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q7"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Always</span>
+                            <span data-value="2">Often</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Rarely</span>
+                        </div>
+                    </div>
+                    <!-- Next Section -->
+                    <button type="button" onclick="showSection4()">Next Section</button>
+                </div>
+                <!-- Section 4 (Initially Hidden) -->
+                <div id="section4" style="display: none;">
+                    <h1>Section 4: Coping Mechanisms</h1>
+                    <!-- Question 8 -->
+                    <p>How do you usually cope with stress?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q8"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">Unhealthy habits (overeating, substance use)</span>
+                            <span data-value="2">Avoiding the problem</span>
+                            <span data-value="3">Talking to friends/family</span>
+                            <span data-value="4">Healthy habits (exercise, meditation)</span>
+                        </div>
+                    </div>
+                    <!-- Question 9 -->
+                    <p>Do you feel like you have effective coping strategies?</p>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="4" value="2" step="1" class="slider" id="q9"
+                            oninput="updateActiveLabel(this)">
+                        <div class="slider-labels">
+                            <span data-value="1">No, never</span>
+                            <span data-value="2">Rarely</span>
+                            <span data-value="3">Sometimes</span>
+                            <span data-value="4">Yes, always</span>
+                        </div>
+                    </div>
+                    <!-- Next Section -->
+                    <button type="button" onclick="submitQuiz()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-    // Function to collect answers and redirect to result.html
-    function submitQuiz() {
-      // Create an array to store the answers
-      const answers = [];
+    <script>
 
-      // Collect the values from each slider
-      for (let i = 1; i <= 9; i++) {
-        const sliderValue = document.getElementById(`q${i}`).value;
-        answers.push(parseInt(sliderValue)); // Convert to integer and add to the array
-      }
+        function showSection2() {
+            document.getElementById("section1").style.display = "none";
+            document.getElementById("section2").style.display = "block";
+        }
 
-      // Store the answers in localStorage
-      localStorage.setItem("quizAnswers", JSON.stringify(answers));
+        function showSection3() {
+            document.getElementById("section2").style.display = "none";
+            document.getElementById("section3").style.display = "block";
+        }
 
-      // Redirect to the result.html page
-      window.location.href = "results.html";
-    }
-  </script>
+        function showSection4() {
+            document.getElementById("section3").style.display = "none";
+            document.getElementById("section4").style.display = "block";
+        }
+
+        function submitQuiz() {
+            const answers = [];
+            for (let i = 1; i <= 9; i++) {
+                const sliderValue = document.getElementById(`q${i}`).value;
+                answers.push(parseInt(sliderValue)); // Convert to integer and add to the array
+            }
+            localStorage.setItem("quizAnswers", JSON.stringify(answers));
+            window.location.href = "results.html";
+        }
+        function updateActiveLabel(input) {
+            const sliderId = input.id;
+            const sliderValue = input.value;
+            const sliderLabels = input.parentElement.querySelector('.slider-labels');
+
+            if (sliderLabels) {
+                // Remove the 'active' class from all labels
+                sliderLabels.querySelectorAll('span').forEach(span => {
+                    span.classList.remove('active');
+                });
+
+                // Find the label that matches the slider's value and add the 'active' class
+                const activeLabel = sliderLabels.querySelector(`[data-value="${sliderValue}"]`);
+                if (activeLabel) {
+                    activeLabel.classList.add('active');
+                }
+            }
+        }
+
+        // Attach event listeners to each slider to call the updateActiveLabel function
+        document.querySelectorAll('.slider').forEach(input => {
+            updateActiveLabel(input); // Call the function once to initialize the labels on page load
+            input.addEventListener('input', () => updateActiveLabel(input)); // Call the function every time the input changes
+        });
+
+    </script>
 </body>
+
 </html>
