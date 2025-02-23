@@ -9,13 +9,141 @@
 <body>
 
   <div class="container">
+    <div class="question">
+      <form id="quiz-form">
+    <div id="section1">
     <h1>Section 1: Emotional Well-Being</h1>
-    <form id="quiz-form">
-    
-      <!-- Question 1 -->
-      <div class="question">
-
+    <!-- Question 1 -->
+  
         <p>How often do you feel overwhelmed by your emotions?</p>
+         <div class="slider-container">
+           <input type="range" 
+             min="1" 
+             max="5" 
+             value="2" 
+             step="1" 
+             class="slider" 
+             id="stressSlider">
+      <div class="slider-labels">
+        <span>Always</span>
+        <span>Often</span>
+        <span>Sometimes</span>
+        <span>Rarely</span>
+        <span>Never</span>
+      </div>
+    </div>
+
+     <!-- Question 2 -->
+        <p>Do you find it difficult to manage stress?</p>
+        <div class="slider-container">
+          <input type="range" 
+            min="1" 
+            max="5" 
+            value="2" 
+            step="1" 
+            class="slider" 
+            id="stressSlider">
+    <div class="slider-labels">
+      <span>Always</span>
+      <span>Often</span>
+      <span>Sometimes</span>
+      <span>Rarely</span>
+      <span>Never</span>
+    </div>
+    </div>
+
+     <!-- Question 3 -->
+          <p>How often do you feel sad or hopeless?</p>
+          <div class="slider-container">
+            <input type="range" 
+              min="1" 
+              max="5" 
+              value="2" 
+              step="1" 
+              class="slider" 
+              id="stressSlider">
+      <div class="slider-labels">
+        <span>Always</span>
+        <span>Often</span>
+        <span>Sometimes</span>
+        <span>Rarely</span>
+        <span>Never</span>
+      </div>
+      </div>
+        <!--Next section -->
+        <button type="button" onclick="showSection2()">Next Section</button>
+  </div>
+
+
+        <!-- Section 2 (Initially Hidden) -->
+        <div id="section2" style="display: none;">
+          <h1>Section 2: Relationships</h1>
+
+            <!-- Question 4 -->
+              <p>How satisfied are you with your current relationships?</p>
+              <div class="slider-container">
+                <input type="range" 
+                  min="1" 
+                  max="4" 
+                  value="2" 
+                  step="1" 
+                  class="slider" 
+                  id="stressSlider">
+          <div class="slider-labels">
+            <span>Dissatisfied</span>
+            <span>Neutral</span>
+            <span>Somewhat satisfied</span>
+            <span>Very Satisfied</span>
+          </div>
+          </div>
+
+             <!-- Question 5 -->
+             <p>Do you struggle with setting boundaries in relationships?</p>
+             <div class="slider-container">
+               <input type="range" 
+                 min="1" 
+                 max="4" 
+                 value="2" 
+                 step="1" 
+                 class="slider" 
+                 id="stressSlider">
+         <div class="slider-labels">
+           <span>Always</span>
+           <span>Frequently</span>
+           <span>Occasionally</span>
+           <span>Not at all</span>
+         </div>
+         </div>
+        
+            <!-- Next Section -->
+            <button type="button" onclick="showSection3()">Next Section</button>    
+        </div>
+  
+             <!-- Section 3 (Initially Hidden) -->
+        <div id="section3" style="display: none;">
+          <h1>Section 3: Self-Esteem and Confidence</h1>
+
+           <!-- Question 6 -->
+           <p>How would you rate your self-confidence?</p>
+           <div class="slider-container">
+             <input type="range" 
+               min="1" 
+               max="4" 
+               value="2" 
+               step="1" 
+               class="slider" 
+               id="stressSlider">
+       <div class="slider-labels">
+         <span>Low</span>
+         <span>Neutral</span>
+         <span>Somewhat High</span>
+         <span>High</span>
+       </div>
+       </div>
+
+
+         <!-- Question 7 -->
+         <p>Do you often compare yourself to others?</p>
          <div class="slider-container">
            <input type="range" 
              min="1" 
@@ -23,47 +151,107 @@
              value="2" 
              step="1" 
              class="slider" 
-             id="stressSlider"
-             oninput="updateSliderValue(this.value)">
-      <div class="slider-labels">
-        <span>Unhealthy habits</span>
-        <span>Avoiding problems</span>
-        <span>Talking to others</span>
-        <span>Healthy habits</span>
-      </div>
-      <div class="slider-value" id="sliderValue">Selected: Level 2 - Avoiding problems</div>
+             id="stressSlider">
+     <div class="slider-labels">
+       <span>Rarely</span>
+       <span>Sometimes</span>
+       <span>Often</span>
+       <span>Always</span>
+     </div>
+     </div>
+         <!-- Next Section -->
+         <button type="button" onclick="showSection4()">Next Section</button>    
+        </div>
+
+
+      <!-- Section 4 (Initially Hidden) -->
+      <div id="section4" style="display: none;">
+      <h1>Section 4: Coping Mechanisms</h1>
+
+        <!-- Question 8 -->
+        <p>How do you usually cope with stress?</p>
+        <div class="slider-container">
+          <input type="range" 
+            min="1" 
+            max="4" 
+            value="2" 
+            step="1" 
+            class="slider" 
+            id="stressSlider">
+    <div class="slider-labels">
+      <span>Unhealthy habits (overeating, substance use)</span>
+      <span>Avoiding the problem</span>
+      <span>Talking to friends/family</span>
+      <span>Healthy habits (exercise, meditation)</span>
     </div>
-  </div>
-    
-     
+    </div>
 
-      <!-- Submit Button -->
-      <button  onclick="result()"  >Submit Quiz</button>
 
+             <!-- Question 9 -->
+              <p>Do you feel like you have effective coping strategies?</p>
+              <div class="slider-container">
+                <input type="range" 
+                  min="1" 
+                  max="4" 
+                  value="2" 
+                  step="1" 
+                  class="slider" 
+                  id="stressSlider">
+          <div class="slider-labels">
+            <span>No, never</span>
+            <span>Rarely</span>
+            <span>Sometimes</span>
+            <span>Yes, always</span>
+          </div>
+          </div>
+
+
+      <!-- Next Section -->
+      <button type="button" onclick="result()">Submit</button>   
+      </div>
+
+
+
+  
     </form>
-
   </div>
+  </div>
+
+
+
 
   <script>
- 
- 
-  function updateSliderValue(value) {
-      const responses = [
-        "Unhealthy habits (overeating, substance use)",
-        "Avoiding problems",
-        "Talking to friends/family",
-        "Healthy habits (exercise, meditation)"
-      ];
-
-      document.getElementById("sliderValue").textContent = 
-        `Selected: Level ${value} - ${responses[value-1]}`;
+    function showSection1(){
+      document.getElementById("section1").style.display = "block";
     }
 
+    function showSection2() {
+      // Hide Section 1 (Including the Header and Questions)
+      document.getElementById("section1").style.display = "none";
+      
+      // Show Section 2
+      document.getElementById("section2").style.display = "block";
+    }
+
+    function showSection3() {
+      // Hide Section 2 (Including the Header and Questions)
+      document.getElementById("section2").style.display = "none";
+      
+      // Show Section 3
+      document.getElementById("section3").style.display = "block";
+    }
+
+    function showSection4() {
+      // Hide Section 3 (Including the Header and Questions)
+      document.getElementById("section3").style.display = "none";
+      
+      // Show Section 4
+      document.getElementById("section4").style.display = "block";
+    }
 
     function result() {
       window.location.href = "result.html";
     }
-
 
   </script>
 </body>
