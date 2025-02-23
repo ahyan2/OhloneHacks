@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommended Therapists</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(174, 219, 238); /* R: 174, G: 219, B: 238 */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            align-items: center;
         }
         .therapist-section {
             background: #f5f5f5;
@@ -26,12 +34,25 @@
             border-radius: 5px;
             margin-top: 10px;
         }
+        h1 {
+            text-align: center;
+            color: #1a237e; /* Navy blue title */
+        }
+        .centered-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Recommended Therapists</h1>
-        <a href="https://mindfulevolutionstherapy.com/therapists/" target="_blank">Click Here to See All the Amazing Therapists of Mindful Evolutions Therapy!</a>
+        <a href="https://mindfulevolutionstherapy.com/therapists/" target="_blank"class="centered-link">Click Here to See All the Amazing Therapists of Mindful Evolutions Therapy!</a>
         <div id="therapist-container">
             <!-- Therapist recommendations will be populated here -->
         </div>
