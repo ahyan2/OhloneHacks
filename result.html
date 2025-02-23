@@ -8,13 +8,28 @@
 </head>
 <body>
   
-     <!-- Result Display -->
-     <div id="result" class="hidden">
-      <title>The result </title>
-    </div>
 
-  
 
-  </script>
+    <h1>Quiz Results</h1>
+    <div id="results"></div>
+
+
+
+   <script>
+          const answers = JSON.parse(localStorage.getItem("quizAnswers"));
+
+      // Display or process the answers
+      const resultsDiv = document.getElementById("results");
+      if (answers) {
+        resultsDiv.innerHTML = `<p>Your answers: ${answers.join(", ")}</p>`;
+        // You can add more logic here to analyze the answers
+      } else {
+        resultsDiv.innerHTML = "<p>No answers found.</p>";
+      }
+
+
+   </script>
+
+
 </body>
 </html>
