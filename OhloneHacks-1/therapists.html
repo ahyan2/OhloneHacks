@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Therapists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(174, 219, 238); /* R: 174, G: 219, B: 238 */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            align-items: center;
+        }
+        .therapist-section {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .book-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #1a237e; /* Navy blue title */
+        }
+        .centered-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo-12 {
+            position: absolute;
+            top: -320px;
+            left: -282px;
+            width: 815px;
+            height: 815px;
+            overflow: hidden;
+        }
+
+        .logo-2 {
+            position: absolute;
+            right: 22.33%;
+            left: 6.99%;
+            bottom: 10.8%;
+            top: 18.53%;
+            width: 70.67%;
+            height: 70.67%;
+            overflow: hidden;
+        }
+
+        .chill, .pill {
+            position: absolute;
+            font-family: "Helvetica-Bold", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .chill {
+            color: #f5f5f5;
+            top: 36.63%;
+            left: 47.05%;
+        }
+
+        .pill {
+            color: #153941;
+            top: 36.63%;
+            left: 59.9%;
+        }
+
+        .vector4, .vector5, .vector6 {
+            position: absolute;
+            overflow: visible;
+        }
+
+        .vector4 {
+            width: 16.44%;
+            height: 6.5%;
+            right: 45.15%;
+            left: 38.4%;
+            bottom: 51.41%;
+            top: 42.09%;
+        }
+
+        .vector5 {
+            width: 6.38%;
+            height: 6.5%;
+            right: 44.79%;
+            left: 48.83%;
+            bottom: 51.41%;
+            top: 42.09%;
+        }
+
+        .vector6 {
+            width: 5.4%;
+            height: 6.5%;
+            right: 47.73%;
+            left: 46.87%;
+            bottom: 51.41%;
+            top: 42.09%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recommended Therapists</h1>
+        <a href="https://mindfulevolutionstherapy.com/therapists/" target="_blank"class="centered-link">Click Here to See All the Amazing Therapists of Mindful Evolutions Therapy!</a>
+        <div id="therapist-container">
+            <!-- Therapist recommendations will be populated here -->
+        </div>
+    </div>
+
+    <div class="background2">
+        <div class="logo-12">
+            <img class="vector4" src="vector3.svg" alt="vector4">
+            <img class="vector5" src="vector4.svg" alt="vector5">
+            <img class="vector6" src="vector5.svg" alt="vector6">
+            
+            <a href="index.html" class="logo-2">
+                <div class="chill">CHILL</div>
+                <div class="pill">PILL</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const therapistData = {
+            emotionalWellbeing: {
+                name: "Suzanne Earle, LMFT #141029",
+                pronouns: "she/her/hers",
+                bio: "My goal is for clients to feel seen and heard so they can authentically process what they're experiencing, gain insight, and develop new skills to manage life. I have had the privilege to work with teens in the juvenile justice system and foster care, college students navigating relationships and transitioning into the workforce, and adults struggling with homelessness, substance use, and psychosis. These experiences have supported my ability to meet clients where they are at and provide an individualized approach. I enjoy working with teens, adults and couples to navigate depression, anxiety, self esteem and self worth issues as well as life transitions. I like to walk alongside clients in a non-judgmental space that includes compassion, empathy, and humor. I am level 1 Gottman trained.",
+                fee: "Her fee is $175 for individuals and $195 for couples/family and she accepts Cigna insurance."
+            },
+            relationships: {
+                name1: "Mae Verano, ACSW# 117461",
+                pronouns1: "they/them",
+                bio1: "My name is Mae and I am a queer, non-binary therapist, committed to meeting you where you are in your personal journey. I approach my sessions with empathy and curiosity, acknowledging that the therapeutic relationship is equally as important as treatment itself. I am committed to the well-being of our larger communities through my work with individuals and their families. This means working from a strengths-based, trauma-informed perspective that utilizes narrative, creativity, and embodiment as its core tenets. You can expect that I will focus on where my clients are when they come to session and together, we will set practical goals to achieve longer-term personal and collective healing.",
+                fee1: "Their fee is $155 for individuals and $175 for couples/families. They accept Cigna, Optum, and United Insurance and offers both in person and telehealth sessions.",
+                name2: "Shimrit Zelig, AMFT #121540",
+                pronouns2: "she/her/hers",
+                bio2: "My goal is to provide a safe and compassionate space for individuals, couples, and families to explore and navigate challenges in their relationships. My approach is holistic, taking into account the unique dynamics and needs of each individual and family. I have experience in treating individuals struggling with anxiety, depression, low self-esteem, and other mental health concerns.",
+                fee2: "Her fee is $155 for individuals and $175 for couples/families. She accepts Cigna, Alameda Alliance Medi-Cal, Optum, and United Insurance."
+            },
+            selfEsteem: {
+                name1: "Kelly Kapis, AMFT#125253",
+                pronouns1: "She/her",
+                bio1: "Hi, I'm Kelly and thank-you for allowing me to be a part of your journey of self-care. I am passionate about helping others while using person-centered, strength-based approaches and integrating various treatment therapies to best meet your needs and goals. I have over 10 years of experience providing trauma-informed individual and group therapy services to children, adolescents, adults, and families.",
+                fee1: "Her fee is $175 for individuals and $175 for couples/family. She accepts Cigna, United and Optum insurance. She provides therapy in English and in American Sign Language.",
+                name2: "Claudia Guzman, AMFT",
+                pronouns2: "she/her/hers",
+                bio2: "I am a bilingual Spanish/English trauma therapist who is passionate about personal growth. I believe in being empathetic, warm, supportive, as well as empowering you to discover the answers to your questions. I approach issues from an eclectic approach, incorporating all therapeutic techniques to support you in your journey of addressing issues and improving self-worth, self-awareness, mood, and relationships, all of which lead to a higher quality of life. If you are ready to go on this journey for insight, for liberation, I can help.",
+                fee2: "Her fee is $155 for individuals and $175 for couples/families. She accepts Cigna, Alameda Alliance Medi-Cal, Optum, and United Insurance."
+            },
+            copingMechanisms: {
+                name: "Samantha Embrick, LCSW #128202",
+                pronouns: "she/her/hers",
+                bio: "My therapeutic goal is to provide clients with a nonjudgmental, validating, and genuine space to help them navigate life transitions, depression, anxiety, trauma, & more. My approach is collaborative and holistic, taking into consideration a person's unique environment and identities. I enjoy using humor and a calm, warm presence while supporting clients in their goals. In the past, I've worked with teens and adults at a comprehensive dialectical behavior therapy (DBT) program, and I've also spent time working in hospitals and providing mental health support to postpartum parents.",
+                fee: "Her fee is $175 for individuals and $195 for couples/families. She accepts Cigna, Alameda Alliance Medi-Cal, Optum, and United Insurance."
+            }
+        };
+
+        function displayTherapists() {
+            const container = document.getElementById('therapist-container');
+            const sections = ['emotionalWellbeing', 'relationships', 'selfEsteem', 'copingMechanisms'];
+            const sectionNames = ['Emotional Well-Being', 'Relationships', 'Self-Esteem and Confidence', 'Coping Mechanisms'];
+
+            // Retrieve scores from localStorage
+            const answers = JSON.parse(localStorage.getItem('quizAnswers'));
+
+            sections.forEach((section, index) => {
+                const sectionData = therapistData[section];
+                let sectionHtml = `<div id="${section}" class="therapist-section"><h2>${sectionNames[index]}</h2>`;
+
+                // Calculate average score for the section
+                const sectionScores = answers.slice(index * 2, index * 2 + 2);
+                const averageScore = Math.round(sectionScores.reduce((a, b) => a + b, 0) / sectionScores.length);
+
+                if (averageScore <= 2) {
+                    if (section === 'relationships' || section === 'selfEsteem') {
+                        sectionHtml += `
+                            <h3>${sectionData.name1} (${sectionData.pronouns1})</h3>
+                            <p>${sectionData.bio1}</p>
+                            <p>${sectionData.fee1}</p>
+                            <a href="${sectionData.link1}" class="book-button" target="_blank">Book an Appointment</a>
+                            <h3>${sectionData.name2} (${sectionData.pronouns2})</h3>
+                            <p>${sectionData.bio2}</p>
+                            <p>${sectionData.fee2}</p>
+                            <a href="https://mindfulevolutionstherapy.com/contact/" class="book-button" target="_blank">Book an Appointment</a>
+                        `;
+                    } else {
+                        sectionHtml += `
+                            <h3>${sectionData.name} (${sectionData.pronouns})</h3>
+                            <p>${sectionData.bio}</p>
+                            <p>${sectionData.fee}</p>
+                            <a href="https://mindfulevolutionstherapy.com/contact/" class="book-button" target="_blank">Book an Appointment</a>
+                        `;
+                    }
+                } else {
+                    sectionHtml += `<p>Therapist is not needed based on your evaluation</p>`;
+                }
+
+                sectionHtml += `</div>`;
+                container.innerHTML += sectionHtml;
+            });
+        }
+        window.addEventListener('load', displayTherapists);
+    </script>
+</body>
+</html>
