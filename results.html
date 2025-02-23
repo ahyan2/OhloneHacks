@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,12 +18,34 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .section-score {
+            position: relative; /* Required for image positioning */
             margin-bottom: 10px;
             padding: 10px;
             border-left: 4px solid #3498db;
+            display: flex;  /* ADDED: For horizontal layout */
+            align-items: center;  /* ADDED: For vertical centering */
+            justify-content: space-between;  /* ADDED:  Space out text and image */
+        }
+
+        .section-score h2 {
+             text-align: center;
+             color: #1a237e;
+             margin-bottom: 15px;
+             position: relative;
+             padding-right: 50px; /* Space for the image */
+         }
+
+        .section-score img {
+            width: 65px;  /* Reduced image size */
+            height: auto;
+            position: absolute;
+            top: 115px;
+            right: 10px;
+            
         }
         .therapist-button {
-            display: inline-block;
+            display: block; /* Changed to block */
+            margin: 0 auto 20px; /* Added auto margins to center */
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
@@ -34,10 +55,22 @@
             font-weight: bold;
             transition: background-color 0.3s;
             cursor: pointer;
-            margin-bottom: 20px;
+            width: fit-content; /* Added fit-content */
+
         }
         .therapist-button:hover {
             background-color: #45a049;
+        }
+        h1 {
+            text-align: center;
+            color: #1a237e; /* Navy blue title */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f0ff; /* Light blue background */
+            margin: 0;
+            padding: 0;
+            color: #333;
         }
     </style>
 </head>
@@ -59,13 +92,15 @@
                     title: "Understanding and Managing Emotions",
                     description: "Learn techniques for emotional regulation and mindfulness",
                     url: "https://www.coursera.org/learn/managing-emotions-uncertainty-stress",
-                    forScores: [1, 2, 3] // Scores 1-3
+                    forScores: [1, 2, 3],
+                    image: "https://pplx-res.cloudinary.com/image/upload/v1740297948/user_uploads/xqmtbXWKWjZOrJI/image-10.jpg"
                 },
                 {
                     title: "Advanced Emotional Intelligence",
                     description: "Develop deeper emotional awareness and control",
                     url: "https://frontlineon.com/trainings/professional-development/advanced-emotional-intelligence/",
-                    forScores: [4, 5] // Scores 4-5
+                    forScores: [4, 5],
+                    image: "https://pplx-res.cloudinary.com/image/upload/v1740297948/user_uploads/xqmtbXWKWjZOrJI/image-10.jpg"
                 }
             ],
             relationships: [
@@ -73,13 +108,15 @@
                     title: "Building Healthy Relationships",
                     description: "Learn fundamental skills for creating and maintaining healthy relationships.",
                     url: "https://www.udemy.com/course/the-path-to-healthy-relationships/",
-                    forScores: [1, 2]
+                    forScores: [1, 2],
+                     image: "https://pplx-res.cloudinary.com/image/upload/v1740297959/user_uploads/OSmJTqlGuPoeFPH/image0.jpg"
                 },
                 {
                     title: "Relationship Enhancement",
                     description: "Take your relationships to the next level with advanced communication skills. Professionally and Personally",
                     url: "https://www.dhs.gov/employee-resources/building-strong-bonds",
-                    forScores: [3, 4]
+                    forScores: [3, 4],
+                     image: "https://pplx-res.cloudinary.com/image/upload/v1740297959/user_uploads/OSmJTqlGuPoeFPH/image0.jpg"
                 }
             ],
             selfEsteem: [
@@ -87,13 +124,15 @@
                     title: "Building Self-Confidence",
                     description: "Develop core self-esteem and confidence through proven techniques.",
                     url: "https://professionaldevelopmenttraining.com/courses/assertiveness-and-self-confidence-training-in-atlanta-baltimore-boston-charlotte-chicago-los-angeles-new-york-miami-orlando-philadelphia-seattle-and-us-wide",
-                    forScores: [1, 2]
+                    forScores: [1, 2],
+                     image: "https://pplx-res.cloudinary.com/image/upload/v1740297967/user_uploads/HqgFvelzMzzDZrY/image1.jpg"
                 },
                 {
                     title: "Advanced Personal Growth",
                     description: "Further develop your self-esteem and personal growth journey.",
                     url: "https://continuingstudies.stanford.edu/courses/professional-personal-development",
-                    forScores: [3, 4]
+                    forScores: [3, 4],
+                    image: "https://pplx-res.cloudinary.com/image/upload/v1740297967/user_uploads/HqgFvelzMzzDZrY/image1.jpg"
                 }
             ],
             copingMechanisms: [
@@ -101,13 +140,15 @@
                     title: "Healthy Coping Strategies",
                     description: "Learn effective ways to handle stress and life challenges.",
                     url: "https://courses.therapyinanutshell.com/coping-skills-and-self-care-for-mental-health",
-                    forScores: [1, 2]
+                    forScores: [1, 2],
+                     image: "https://pplx-res.cloudinary.com/image/upload/v1740297983/user_uploads/SvNXyFhNsSaScXB/image2.jpg"
                 },
                 {
                     title: "Advanced Stress Management",
                     description: "Master advanced techniques for managing stress and building resilience.",
                     url: "https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/the-4-as-of-stress-relief",
-                    forScores: [3, 4]
+                    forScores: [3, 4],
+                     image: "https://pplx-res.cloudinary.com/image/upload/v1740297983/user_uploads/SvNXyFhNsSaScXB/image2.jpg"
                 }
             ]
         };
@@ -117,11 +158,11 @@
             container.innerHTML = ''; // Clear existing content
 
             const sections = [
-        { key: 'emotionalWellbeing', name: 'Emotional Well-Being', questions: [0, 1, 2], therapist: 'Suzanna Earle' },
-        { key: 'relationships', name: 'Relationships', questions: [3, 4], therapist: 'Mae Verano and Shimrit Zelig' },
-        { key: 'selfEsteem', name: 'Self-Esteem and Confidence', questions: [5, 6], therapist: 'Kelly Kapis and Claudia Guzanam' },
-        { key: 'copingMechanisms', name: 'Coping Mechanisms', questions: [7, 8], therapist: 'Samantha Embrick' },
-    ];
+                { key: 'emotionalWellbeing', name: 'Emotional Well-Being', questions: [0, 1, 2], therapist: 'Suzanne Earle', image: "https://pplx-res.cloudinary.com/image/upload/v1740297948/user_uploads/xqmtbXWKWjZOrJI/image-10.jpg" },
+                { key: 'relationships', name: 'Relationships', questions: [3, 4], therapist: 'Mae Verano and Shimrit Zelig', image: "https://pplx-res.cloudinary.com/image/upload/v1740297959/user_uploads/OSmJTqlGuPoeFPH/image0.jpg" },
+                { key: 'selfEsteem', name: 'Self-Esteem and Confidence', questions: [5, 6], therapist: 'Kelly Kapis and Claudia Guzman', image: "https://pplx-res.cloudinary.com/image/upload/v1740297967/user_uploads/HqgFvelzMzzDZrY/image1.jpg" },
+                { key: 'copingMechanisms', name: 'Coping Mechanisms', questions: [7, 8], therapist: 'Samantha Embrick', image: "https://pplx-res.cloudinary.com/image/upload/v1740297983/user_uploads/SvNXyFhNsSaScXB/image2.jpg" }
+            ];
 
     sections.forEach(section => {
         const sectionScores = section.questions.map(index => answers[index]);
@@ -130,6 +171,7 @@
         container.innerHTML += `
             <div class="section-score">
                 <h2>${section.name} Score: ${averageScore}</h2>
+                <img src="${section.image}" alt="${section.name} Image">
             </div>
         `;
 
@@ -161,7 +203,7 @@
                     <h3>${recommendation.title}</h3>
                     <p>${recommendation.description}</p>
                     <p>Based on your ${section.name} score: ${averageScore}</p>
-                    <a href="${recommendation.url}" target="_blank">Learn More About the Course</a>
+                    <a href="${recommendation.url}" target="_blank">Learn More About the Course that is Right for you</a>
                 </div>
             `;
         }
